@@ -19,33 +19,33 @@ import { LinkPreset } from "./types/config";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "ja"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
+	title: "SevensNight",
+	subtitle: "One Magic Cottage",
 	siteURL: "https://sevensnight.github.io/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2025-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteStartDate: "2024-10-13", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
 
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 60, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 260, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 	},
 
 	// 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
 	featurePages: {
 		anime: true, // 番剧页面开关
-		diary: true, // 日记页面开关
+		diary: false, // 日记页面开关
 		friends: true, // 友链页面开关
-		projects: true, // 项目页面开关
-		skills: true, // 技能页面开关
-		timeline: true, // 时间线页面开关
+		projects: false, // 项目页面开关
+		skills: false, // 技能页面开关
+		timeline: false, // 时间线页面开关
 		albums: true, // 相册页面开关
-		devices: true, // 设备页面开关
+		devices: false, // 设备页面开关
 	},
 
 	// 顶栏标题配置
@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "logo",
 		// 顶栏标题文本
-		text: "MizukiUI",
+		text: "SevensNight",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.png",
 		// 网站Logo图片路径
@@ -63,7 +63,7 @@ export const siteConfig: SiteConfig = {
 	// 页面自动缩放配置
 	pageScaling: {
 		enable: true, // 是否开启自动缩放
-		targetWidth: 2000, // 目标宽度，低于此宽度时开始缩放
+		targetWidth:  1500, // 目标宽度，低于此宽度时开始缩放
 	},
 
 	bangumi: {
@@ -72,7 +72,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	bilibili: {
-		vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (uid)，例如 "1129280784"
+		vmid: "Bilibili", // 在此处设置你的Bilibili用户ID (uid)，例如 "1129280784"
 		fetchOnDev: false, // 是否在开发环境下获取 Bilibili 数据（默认 false）
 		coverMirror: "", // 封面图片镜像源（可选，如果需要使用镜像源，例如 "https://images.weserv.nl/?url="）
 		useWebp: true, // 是否使用WebP格式（默认 true）
@@ -120,11 +120,17 @@ export const siteConfig: SiteConfig = {
 		src: {
 			desktop: [
 				"/assets/desktop-banner/1.webp",
-				"/assets/desktop-banner/2.webp",
-				"/assets/desktop-banner/3.webp",
-				"/assets/desktop-banner/4.webp",
+				//"/assets/desktop-banner/2.webp",
+				//"/assets/desktop-banner/3.webp",
+				//"/assets/desktop-banner/4.webp",
 				"/assets/desktop-banner/5.webp",
-				"/assets/desktop-banner/6.webp",
+				//"/assets/desktop-banner/6.webp",
+				//"/assets/desktop-banner/7.webp",
+				//"/assets/desktop-banner/8.webp",
+				//"/assets/desktop-banner/9.webp",
+				//"/assets/desktop-banner/10.webp",
+				//"/assets/desktop-banner/11.webp",
+				//"/assets/desktop-banner/12.webp",
 			], // 桌面横幅图片
 			mobile: [
 				"/assets/mobile-banner/1.webp",
@@ -133,6 +139,12 @@ export const siteConfig: SiteConfig = {
 				"/assets/mobile-banner/4.webp",
 				"/assets/mobile-banner/5.webp",
 				"/assets/mobile-banner/6.webp",
+				"/assets/mobile-banner/7.webp",
+				"/assets/mobile-banner/8.webp",
+				"/assets/mobile-banner/9.webp",
+				"/assets/mobile-banner/10.webp",
+				"/assets/mobile-banner/11.webp",
+				"/assets/mobile-banner/12.webp",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -140,12 +152,12 @@ export const siteConfig: SiteConfig = {
 
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
-			interval: 1.5, // 轮播间隔时间（秒）
+			interval: 3.5, // 轮播间隔时间（秒）
 		},
 
 		waves: {
 			enable: true, // 是否启用水波纹效果（注意：此功能性能开销较大）
-			performanceMode: false, // 性能模式：减少动画复杂度(性能提升40%)
+			performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
 			mobileDisable: false, // 移动端禁用
 		},
 
@@ -160,21 +172,23 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "わたしの部屋", // 主页横幅主标题
+			title: "柒柒七夜のblog", // 主页横幅主标题
 
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"松窗笼薄霭，竹几煮茗伴烟轻.",
+				"疏雨霏微润野皋，断云低护水边桥.",
+				"篱落浮暗香，竹榻摊书伴虫鸣.",
+				"月落星河静，霜凝草木寒.",
+				"雾起山藏影，霞飞水泛光.",
+				"溪绕青山转，泉鸣幽谷长.",
+				"春至花开香满径，夏来蝉鸣韵盈庭.",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
-				speed: 100, // 打字速度（毫秒）
+				speed: 80, // 打字速度（毫秒）
 				deleteSpeed: 50, // 删除速度（毫秒）
-				pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
+				pauseTime: 2600, // 完全显示后的暂停时间（毫秒）
 			},
 		},
 
@@ -191,11 +205,11 @@ export const siteConfig: SiteConfig = {
 	},
 	toc: {
 		enable: true, // 启用目录功能
-		mode: "sidebar", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
-		depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-		useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+		mode: "float", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
+		depth: 6, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
+		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
-	showCoverInContent: true, // 在文章内容页显示文章封面
+	showCoverInContent: false, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
 	favicon: [
 		// 留空以使用默认 favicon
@@ -213,16 +227,16 @@ export const siteConfig: SiteConfig = {
 		asciiFont: {
 			// 英文字体 - 优先级最高
 			// 指定为英文字体则无论字体包含多大范围，都只会保留 ASCII 字符子集
-			fontFamily: "ZenMaruGothic-Medium",
-			fontWeight: "400",
-			localFonts: ["ZenMaruGothic-Medium.ttf"],
-			enableCompress: true, // 启用字体子集优化，减少字体文件大小
+			fontFamily: "Candy Beans",
+			fontWeight: "800",
+			localFonts: ["Candy Beans.otf"],
+			enableCompress: false, // 启用字体子集优化，减少字体文件大小
 		},
 		cjkFont: {
 			// 中日韩字体 - 作为回退字体
-			fontFamily: "萝莉体 第二版",
-			fontWeight: "500",
-			localFonts: ["萝莉体 第二版.ttf"],
+			fontFamily: "龚帆乐淘体",
+			fontWeight: "800",
+			localFonts: ["龚帆乐淘体.ttf"],
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 	},
@@ -232,11 +246,17 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
 			"/assets/desktop-banner/1.webp",
-			"/assets/desktop-banner/2.webp",
-			"/assets/desktop-banner/3.webp",
-			"/assets/desktop-banner/4.webp",
+			//"/assets/desktop-banner/2.webp",
+			//"/assets/desktop-banner/3.webp",
+			//"/assets/desktop-banner/4.webp",
 			"/assets/desktop-banner/5.webp",
-			"/assets/desktop-banner/6.webp",
+			//"/assets/desktop-banner/6.webp",
+			//"/assets/desktop-banner/7.webp",
+			//"/assets/desktop-banner/8.webp",
+			//"/assets/desktop-banner/9.webp",
+			//"/assets/desktop-banner/10.webp",
+			//"/assets/desktop-banner/11.webp",
+			//"/assets/desktop-banner/12.webp",
 		], // 桌面横幅图片
 		mobile: [
 			"/assets/mobile-banner/1.webp",
@@ -245,15 +265,21 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 			"/assets/mobile-banner/4.webp",
 			"/assets/mobile-banner/5.webp",
 			"/assets/mobile-banner/6.webp",
+			"/assets/mobile-banner/7.webp",
+			"/assets/mobile-banner/8.webp",
+			"/assets/mobile-banner/9.webp",
+			"/assets/mobile-banner/10.webp",
+			"/assets/mobile-banner/11.webp",
+			"/assets/mobile-banner/12.webp",
 		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
 	carousel: {
 		enable: true, // 启用轮播
-		interval: 5, // 轮播间隔时间（秒）
+		interval: 3.5, // 轮播间隔时间（秒）
 	},
 	zIndex: -1, // 层级，确保壁纸在背景层
-	opacity: 0.8, // 壁纸透明度
+	opacity: 0.95, // 壁纸透明度
 	blur: 1, // 背景模糊程度
 };
 
@@ -269,21 +295,29 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
+					url: "https://github.com/sevensnight/sevensnight.github.io",
 					external: true,
 					icon: "fa7-brands:github",
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
+					url: "https://space.bilibili.com/482336224",
 					external: true,
 					icon: "fa7-brands:bilibili",
 				},
+				/*
 				{
 					name: "Gitee",
 					url: "https://gitee.com/matsuzakayuki/Mizuki",
 					external: true,
 					icon: "mdi:git",
+				},
+				*/
+				{
+					name: "博客园",
+					url: "https://www.cnblogs.com/SevensNight",
+					external: true,
+					icon: "fa7-solid:graduation-cap",
 				},
 			],
 		},
@@ -297,22 +331,26 @@ export const navBarConfig: NavBarConfig = {
 					url: "/anime/",
 					icon: "material-symbols:movie",
 				},
+				/*
 				{
 					name: "Diary",
 					url: "/diary/",
 					icon: "material-symbols:book",
 				},
+				*/
 				{
 					name: "Gallery",
 					url: "/albums/",
 					icon: "material-symbols:photo-library",
 				},
+				/*
 				{
 					name: "Devices",
 					url: "devices/",
 					icon: "material-symbols:devices",
 					external: false,
 				},
+				*/
 			],
 		},
 		{
@@ -332,6 +370,7 @@ export const navBarConfig: NavBarConfig = {
 				},
 			],
 		},
+		/*
 		{
 			name: "Others",
 			url: "#",
@@ -354,33 +393,37 @@ export const navBarConfig: NavBarConfig = {
 				},
 			],
 		},
+		*/
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "まつざか ゆき",
-	bio: "世界は大きい、君は行かなければならない",
+	avatar: "assets/images/avatar.png", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+	name: "柒柒七夜",
+	bio: "A wanderer of the clouds and winds is he,This wolf-dragon messenger, who walks the sky.",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
-		speed: 80, // 打字速度（毫秒）
+		speed: 50, // 打字速度（毫秒）
 	},
 	links: [
 		{
 			name: "Bilibili",
 			icon: "fa7-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://space.bilibili.com/482336224",
 		},
+		/*
 		{
 			name: "Gitee",
 			icon: "mdi:git",
 			url: "https://gitee.com/matsuzakayuki",
 		},
+		*/
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
+			url: "https://github.com/sevensnight",
 		},
+		/*
 		{
 			name: "Codeberg",
 			icon: "simple-icons:codeberg",
@@ -390,6 +433,12 @@ export const profileConfig: ProfileConfig = {
 			name: "Discord",
 			icon: "fa7-brands:discord",
 			url: "https://discord.gg/MqW6TcQtVM",
+		},
+		*/
+		{
+			name: "博客园",
+			icon: "fa7-solid:graduation-cap",
+			url: "https://www.cnblogs.com/SevensNight",
 		},
 	],
 };
@@ -435,9 +484,9 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	twikoo: {
-		envId: "https://twikoo.vercel.app",
+		envId: "https://twikoo-api-snowy-two.vercel.app/",
 		lang: SITE_LANG,
 	},
 };
@@ -448,11 +497,11 @@ export const shareConfig: ShareConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "", // 公告标题，填空使用i18n字符串Key.announcement
-	content: "ブログへようこそ！これはサンプルの告知です", // 公告内容
-	closable: true, // 允许用户关闭公告
+	content: "你好鸭~欢迎来到小狼的博客！要常来玩嗷 (๑・̀ㅂ・́)و✧", // 公告内容
+	closable: false, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
-		text: "Learn More", // 链接文本
+		text: "About Me", // 链接文本
 		url: "/about/", // 链接 URL
 		external: false, // 内部链接
 	},
@@ -462,8 +511,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	enable: true, // 启用音乐播放器功能
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
-		"https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
-	id: "14164869977", // 歌单ID
+		"https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
+	id: "3100130846", // 歌单ID
 	server: "netease", // 音乐源服务器。有的meting的api源支持更多平台,一般来说,netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 	type: "playlist", // 播单类型
 };
@@ -616,7 +665,7 @@ export const sakuraConfig: SakuraConfig = {
 
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
-	enable: true, // 启用看板娘
+	enable: false, // 启用看板娘
 	models: ["/pio/models/pio/model.json"], // 默认模型路径
 	position: "left", // 模型位置
 	width: 280, // 默认宽度

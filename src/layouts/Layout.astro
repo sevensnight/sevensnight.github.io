@@ -373,7 +373,22 @@ if (siteConfig.font) {
 			title={profileConfig.name}
 			href={`${Astro.site}rss.xml`}
 		/>
-		
+  		<script type="text/javascript">
+     			var OriginTitile = document.title,
+      			titleTime;
+     			document.addEventListener("visibilitychange",
+     			function() {
+      			if (document.hidden) {
+        			document.title = "╭(°A°`)╮ 你去哪了？！";
+        			clearTimeout(titleTime)
+      			} else {
+        		document.title = "(ฅ≧ω≦*ฅ) 你肥来啦！" ;
+        			titleTime = setTimeout(function() {
+            			document.title = OriginTitile
+        			}, 2000)
+      			}
+    		});
+  		</script>
 	</head>
 	<body
 		class="min-h-screen"
@@ -1356,3 +1371,4 @@ function disableAnimation() {
 <script>
 	import "../scripts/theme-optimizer.js";
 </script>
+
