@@ -331,7 +331,7 @@ if __name__ == "__main__":
 
 跑了约6分钟,我感觉做复杂了
 
-<img src="/src/content/posts/MITM/1.png" width="55%">
+<img src="/images/MITM/1.png" width="55%">
 
 ```python
 import hashlib

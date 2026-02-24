@@ -169,6 +169,8 @@ if (siteConfig.font) {
 	data-overlayscrollbars-initialize
 >
 	<head>
+		<!-- Umami 统计脚本 -->
+  		<script defer src="https://cloud.umami.is/script.js" data-website-id="036104da-f439-4051-936a-b2a44f056860"></script>
 		<!-- 第三方分析脚本 - 延迟加载优化 -->
 		<script is:inline>
 			// 使用 requestIdleCallback 延迟加载第三方脚本
@@ -474,9 +476,9 @@ if (siteConfig.font) {
 
 <script>
 	// import { animationManager } from '../utils/animation-utils';
-	import "overlayscrollbars/overlayscrollbars.css";
+	// import "overlayscrollbars/overlayscrollbars.css"; // 不再使用 OverlayScrollbars
 	// import {
-	//  OverlayScrollbars,
+	// 	OverlayScrollbars,
 	//  // ScrollbarsHidingPlugin,
 	//  // SizeObserverPlugin,
 	//  // ClickScrollPlugin
@@ -603,6 +605,9 @@ function disableAnimation() {
 	}
 
 	initializePanelManager();
+	
+	// 初始化自定义滚动条
+	initCustomScrollbar();
 
 	// function _loadTheme() {
 	//  const theme = getStoredTheme()
@@ -614,8 +619,10 @@ function disableAnimation() {
 	// }
 
 	function initCustomScrollbar() {
-		// 完全禁用OverlayScrollbars的body初始化，避免导致页面重新加载
-		// 只处理katex元素的滚动条
+		// 使用浏览器原生滚动条，不进行任何自定义
+		// 这样可以获得最佳性能和最流畅的滚动体验
+		
+		// 处理katex元素的滚动条
 		const katexElements = document.querySelectorAll(
 			".katex-display:not([data-scrollbar-initialized])",
 		) as NodeListOf<HTMLElement>;
@@ -628,7 +635,7 @@ function disableAnimation() {
 			element.parentNode.insertBefore(container, element);
 			container.appendChild(element);
 
-			// 使用简单的CSS滚动条而不是OverlayScrollbars
+			// 使用简单的CSS滚动条
 			container.style.cssText = `
             overflow-x: auto;
             scrollbar-width: thin;
@@ -1371,4 +1378,3 @@ function disableAnimation() {
 <script>
 	import "../scripts/theme-optimizer.js";
 </script>
-

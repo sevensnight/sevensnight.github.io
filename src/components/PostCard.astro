@@ -8,6 +8,7 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import ImageWrapper from "./misc/ImageWrapper.astro";
 import PostMetadata from "./PostMeta.astro";
+import { calculateWordCount } from "@/utils/word-count";
 
 interface Props {
 	class?: string;
@@ -33,7 +34,9 @@ const url = getPostUrl(entry);
 const hasCover = image !== undefined && image !== null && image !== "";
 const coverWidth = "28%";
 
+// 获取 excerpt 和计算文章字数
 const { remarkPluginFrontmatter } = await render(entry);
+const wordCountResult = calculateWordCount(entry.body || "");
 ---
 
 <div
@@ -89,7 +92,7 @@ const { remarkPluginFrontmatter } = await render(entry);
 			hideUpdateDate={true}
 			className="mb-4"
 			showOnlyBasicMeta={true}
-			words={remarkPluginFrontmatter.words}
+			words={wordCountResult.words}
 			showWordCount={true}
 		/>
 

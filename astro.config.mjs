@@ -25,7 +25,7 @@ import { rehypeMermaid } from "./src/plugins/rehype-mermaid.mjs";
 import { rehypeWrapTable } from "./src/plugins/rehype-wrap-table.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
-import { remarkContent } from "./src/plugins/remark-content.mjs";
+import { remarkExcerpt } from "./src/plugins/remark-excerpt.mjs";
 import { rehypeImageWidth } from "./src/plugins/rehype-image-width.mjs";
 
 // https://astro.build/config
@@ -38,7 +38,7 @@ export default defineConfig({
 
 	integrations: [
 		umami({
-			shareUrl: false,
+			shareUrl: "https://cloud.umami.is/analytics/us/share/NHjdXrjmk6mBgCEJ",
 		}),
 		tailwind({
 			nesting: true,
@@ -122,7 +122,7 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [
 			remarkMath,
-			remarkContent,
+			remarkExcerpt,
 			remarkGithubAdmonitionsToDirectives,
 			remarkDirective,
 			remarkSectionize,

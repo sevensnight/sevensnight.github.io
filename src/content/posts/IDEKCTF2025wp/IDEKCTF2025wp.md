@@ -17,7 +17,7 @@ permalink: "IDEKCTF2025-wp"
 
 Welcome to idekCTF 2025! Please join our discord for any announcements and updates on challenges.
 
-<img src="/src/content/posts/IDEKCTF2025wp/i1.png" width="40%">
+<img src="/images/IDEKCTF2025wp/i1.png" width="40%">
 
 :::tip[flag]
 idek{imagine_starting_ctf_on_time}
@@ -25,7 +25,7 @@ idek{imagine_starting_ctf_on_time}
 
 ## 问卷调查
 
-<img src="/src/content/posts/IDEKCTF2025wp/i2.png" width="55%">
+<img src="/images/IDEKCTF2025wp/i2.png" width="55%">
 
 :::tip[flag]
 idek{th4nk5_f0r_p1ay1ng_s33_y0u_n3xt_y34r}
@@ -864,7 +864,7 @@ for r in gcd(f, pow(X, p, f) - X).roots(multiplicities = False):
 #r = 126961729658296101306560858021273501485
 ```
 
-<img src="/src/content/posts/IDEKCTF2025wp/i5.png" width="37%">
+<img src="/images/IDEKCTF2025wp/i5.png" width="37%">
 
 :::tip[flag]
 idek{tks_f0r_ur_t1ck3t_xD}
@@ -1964,11 +1964,11 @@ Heard of constructor? 
 
 + 没有一个明确的主函数,那么我们shift+F12看一下有没有比较特殊的字符
 
-+ <img src="/src/content/posts/IDEKCTF2025wp/i6.png" width="60%">
++ <img src="/images/IDEKCTF2025wp/i6.png" width="60%">
 
 + 跳转过去发现有一个`a3`参数被一个`sub_401050`函数引用
 
-+ <img src="/src/content/posts/IDEKCTF2025wp/i7.png" width="90%">
++ <img src="/images/IDEKCTF2025wp/i7.png" width="90%">
 
 + 下面是`sub_401050`函数
 

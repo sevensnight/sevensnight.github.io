@@ -172,7 +172,7 @@ print 'c =', c
 ##### 解2
 
 + [[老题新做] 羊城杯 2021 - Easy RSA 另解](https://zhuanlan.zhihu.com/p/435012704)
-+ <img src="/src/content/posts/Common_Prime_RSA/zh1.png" width="80%">
++ <img src="/images/Common_Prime_RSA/zh1.png" width="80%">
 
 #### 解答
 

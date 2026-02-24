@@ -28,6 +28,7 @@ import ImageWrapper from "../components/misc/ImageWrapper.astro";
 import PostMetadata from "../components/PostMeta.astro";
 import { profileConfig, siteConfig } from "../config";
 import { formatDateToYYYYMMDD } from "../utils/date-utils";
+import { calculateWordCount } from "../utils/word-count";
 
 export async function getStaticPaths() {
 	const blogEntries = await getSortedPosts();
@@ -67,9 +68,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content, headings } = await render(entry);
+const { Content, headings, remarkPluginFrontmatter } = await render(entry);
 
-const { remarkPluginFrontmatter } = await render(entry);
+// 计算文章字数和阅读时间
+const wordCountResult = calculateWordCount(entry.body || "");
 
 // 处理加密逻辑
 let encryptedContent = "";
@@ -140,7 +142,7 @@ const jsonLd = {
                         <Icon name="material-symbols:notes-rounded" />
                     </div>
                     <div class="text-sm">
-                        {remarkPluginFrontmatter.words}
+                        {wordCountResult.words}
                         {" " + i18n(I18nKey.wordsCount)}
                     </div>
                 </div>
@@ -153,11 +155,11 @@ const jsonLd = {
                         />
                     </div>
                     <div class="text-sm">
-                        {remarkPluginFrontmatter.minutes}
+                        {wordCountResult.minutes}
                         {
                             " " +
                                 i18n(
-                                    remarkPluginFrontmatter.minutes === 1
+                                    wordCountResult.minutes === 1
                                         ? I18nKey.minuteCount
                                         : I18nKey.minutesCount,
                                 )

@@ -257,7 +257,7 @@ p=954455861490902893457047257515590051179337979243488068132318878264162627
 q=824752716083066619280674937934149242011126804999047155998788143116757683
 ```
 
-+ <img src="/src/content/posts/ROCA/1.png" width="75%">
++ <img src="/images/ROCA/1.png" width="75%">
 
 ```python
 from Crypto.Util.number import *
@@ -304,7 +304,7 @@ n = 1551896104162507487618240458539409878148714105928545592702432127678383112216
 
 + `ROCA`攻击
 
-+ <img src="/src/content/posts/ROCA/2.png" width="75%">
++ <img src="/images/ROCA/2.png" width="75%">
 
 **法3:**
 

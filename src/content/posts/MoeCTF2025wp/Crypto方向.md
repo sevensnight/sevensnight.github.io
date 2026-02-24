@@ -1650,7 +1650,7 @@ enc=4928664688898296453245787842394875770093711870614163834662507100906173000290
 ## 思路
 
 - 将上述算法生成的素数看作RSA中的 $p$ , $q$ ,其满足 $g=gcd(p−1,q−1)$ 是一个大素数因子,故称 $p$ , $q$ 为<font color="#d99694">共素数</font>(common primes),其中 $g$ 为这两个素数的<font color="#d99694">共因子</font>(common factor)
-- [共素数RSA(Common_Prime-RSA)-已知g](https://sevensnight.github.io/posts/common-prime-rsa/#已知g)
+- [共素数RSA(Common_Prime-RSA)-已知g](https://sevensnight.github.io/common-prime-rsa/#已知g)
 
 ## 解答
 

@@ -237,10 +237,10 @@ export const siteConfig: SiteConfig = {
 			fontFamily: "龚帆乐淘体",
 			fontWeight: "800",
 			localFonts: ["龚帆乐淘体.ttf"],
-			enableCompress: true, // 启用字体子集优化，减少字体文件大小
+			enableCompress: false, // 启用字体子集优化，减少字体文件大小
 		},
 	},
-	showLastModified: true, // 控制“上次编辑”卡片显示的开关
+	showLastModified: false, // 控制“上次编辑”卡片显示的开关
 };
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
