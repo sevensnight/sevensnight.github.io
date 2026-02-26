@@ -9,6 +9,7 @@ author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-03-20
+image: "./1.png"
 permalink: "DH-MITM-RSA"
 ---
 

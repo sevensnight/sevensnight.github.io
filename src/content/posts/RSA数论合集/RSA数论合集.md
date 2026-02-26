@@ -2,13 +2,14 @@
 title: RSA数论合集
 published: 2025-08-12
 pinned: false
-description: 围绕 RSA 加密相关的数论问题展开，结合费马小定理、CRT等方法
+description: 围绕 RSA 加密相关的数论问题展开，结合费马小定理、CRT 等方法
 tags: [CRT, 二项式展开, Fermat, 韦达定理]
 category: Article
 author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-08-12
+image: "./1.png"
 permalink: "number-theory"
 ---
 

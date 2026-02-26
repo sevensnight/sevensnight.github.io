@@ -120,7 +120,7 @@ export const siteConfig: SiteConfig = {
 		src: {
 			desktop: [
 				"/assets/desktop-banner/1.webp",
-				//"/assets/desktop-banner/2.webp",
+				"/assets/desktop-banner/2.webp",
 				//"/assets/desktop-banner/3.webp",
 				//"/assets/desktop-banner/4.webp",
 				"/assets/desktop-banner/5.webp",
@@ -246,7 +246,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
 			"/assets/desktop-banner/1.webp",
-			//"/assets/desktop-banner/2.webp",
+			"/assets/desktop-banner/2.webp",
 			//"/assets/desktop-banner/3.webp",
 			//"/assets/desktop-banner/4.webp",
 			"/assets/desktop-banner/5.webp",

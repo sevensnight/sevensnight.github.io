@@ -9,6 +9,7 @@ author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-08-04
+image: "./1.png"
 permalink: "IDEKCTF2025-wp"
 ---
 

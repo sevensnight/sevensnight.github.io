@@ -2,13 +2,14 @@
 title: 离散对数(DLP)
 published: 2025-08-12
 pinned: false
-description: 介绍DLP的核心定义、相关概念，并详细讲解求解 DLP 的多种算法
+description: 介绍 DLP 的核心定义、相关概念，并详细讲解求解 DLP 的多种算法
 tags: [DLP]
 category: Article
 author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-08-12
+image: "./1.png"
 permalink: "dlp"
 ---
 

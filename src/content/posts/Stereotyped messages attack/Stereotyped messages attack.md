@@ -2,13 +2,14 @@
 title: Stereotyped messages attack
 published: 2025-02-19
 pinned: false
-description: 基于 Coppersmith 方法的 RSA 刻板消息攻击的原理与具体实现过程
+description: 详细讲解基于 Coppersmith 模多项式小根方法的 RSA 刻板消息攻击，梳理攻击原理、成立条件与完整实现流程。Tip：前方施工中……（例题完善中……）
 tags: [CopperSmith]
 category: Article
 author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-02-19
+image: "./1.png"
 permalink: "stereotyped-messages-attack"
 ---
 

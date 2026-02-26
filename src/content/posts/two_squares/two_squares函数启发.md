@@ -9,6 +9,7 @@ author: SevensNight
 licenseName: "CC BY-NC-SA 4.0"
 draft: false
 date: 2025-07-21
+image: "./1.png"
 permalink: "two-squares"
 ---
 
