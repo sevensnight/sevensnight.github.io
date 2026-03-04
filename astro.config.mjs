@@ -30,7 +30,7 @@ import { rehypeImageWidth } from "./src/plugins/rehype-image-width.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://sevensnight.github.io',
+	site: "https://sevensnight.github.io",
 	base: "",
 	trailingSlash: "always",
 
@@ -38,7 +38,8 @@ export default defineConfig({
 
 	integrations: [
 		umami({
-			shareUrl: "https://cloud.umami.is/analytics/us/share/NHjdXrjmk6mBgCEJ",
+			shareUrl:
+				"https://cloud.umami.is/analytics/us/share/NHjdXrjmk6mBgCEJ",
 		}),
 		tailwind({
 			nesting: true,

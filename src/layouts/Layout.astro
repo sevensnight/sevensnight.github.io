@@ -171,6 +171,84 @@ if (siteConfig.font) {
 	<head>
 		<!-- Umami 统计脚本 -->
   		<script defer src="https://cloud.umami.is/script.js" data-website-id="036104da-f439-4051-936a-b2a44f056860"></script>
+		
+		<!-- 创建简单的 window.oddmisc 对象 -->
+		<script is:inline>
+			// 创建简单的 window.oddmisc 对象
+			window.oddmisc = window.oddmisc || {
+				// 解析 Umami 分享 URL
+				parseShareUrl: function(shareUrl) {
+					const url = new URL(shareUrl);
+					const pathSegments = url.pathname.split('/');
+					const shareIndex = pathSegments.indexOf('share');
+					
+					if (shareIndex === -1 || shareIndex === pathSegments.length - 1) {
+						throw new Error('无效的分享 URL：未找到 share 路径');
+					}
+					
+					const shareId = pathSegments[shareIndex + 1];
+					if (!shareId) {
+						throw new Error('无效的分享 URL：缺少分享 ID');
+					}
+					
+					const apiBase = pathSegments.slice(0, shareIndex).join('/') + '/api';
+					return { apiBase: `${url.protocol}//${url.host}${apiBase}`, shareId };
+				},
+				
+				// 获取统计数据
+				getStats: async function(path) {
+					try {
+						const shareUrl = 'https://cloud.umami.is/analytics/us/share/NHjdXrjmk6mBgCEJ';
+						const { apiBase, shareId } = this.parseShareUrl(shareUrl);
+						
+						// 获取分享数据
+						const shareResponse = await fetch(`${apiBase}/share/${shareId}`);
+						if (!shareResponse.ok) {
+							throw new Error(`获取分享信息失败: ${shareResponse.status}`);
+						}
+						const shareData = await shareResponse.json();
+						
+						// 构建统计查询参数
+						const params = new URLSearchParams({
+							startAt: '0',
+							endAt: Date.now().toString()
+						});
+						
+						if (path) {
+							params.set('path', `eq.${path}`);
+						}
+						
+						// 获取统计数据
+						const statsResponse = await fetch(`${apiBase}/websites/${shareData.websiteId}/stats?${params.toString()}`, {
+							headers: {
+								'x-umami-share-token': shareData.token
+							}
+						});
+						
+						if (!statsResponse.ok) {
+							throw new Error(`获取统计失败: ${statsResponse.status}`);
+						}
+						
+						const stats = await statsResponse.json();
+						
+						return {
+							pageviews: stats.pageviews?.value || stats.pageviews || 0,
+							visitors: stats.visitors?.value || stats.visitors || 0,
+							visits: stats.visits?.value || stats.visits || 0
+						};
+					} catch (error) {
+						console.error('获取统计数据失败:', error);
+						return { pageviews: 0, visitors: 0, visits: 0 };
+					}
+				},
+				
+				// 获取网站统计
+				getSiteStats: async function() {
+					return this.getStats();
+				}
+			};
+		</script>
+		
 		<!-- 第三方分析脚本 - 延迟加载优化 -->
 		<script is:inline>
 			// 使用 requestIdleCallback 延迟加载第三方脚本

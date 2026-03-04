@@ -85,12 +85,7 @@ import { i18n } from "../../i18n/translation";
             const pageViews = stats.pageviews || 0;
             const visits = stats.visits || 0;
 
-            // 数据为 0 时隐藏
-            if (pageViews === 0 && visits === 0) {
-                container?.classList.add('hidden');
-                return;
-            }
-
+            // 始终显示统计数据，即使为 0
             container?.classList.remove('hidden');
             document.querySelectorAll('.site-stats-display').forEach(el => {
                 el.textContent = generateStatsText(pageViews, visits);
