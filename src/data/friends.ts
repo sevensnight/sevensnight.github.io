@@ -20,6 +20,14 @@ export const friendsData: FriendItem[] = [
 		siteurl: "https://github.com/",
 		tags: ["Pwn", "Reverse", "Web"],
 	},
+	{
+		id: 2,
+		title: "KanaDE",
+		imgurl: "/assets/friends/y2.jpg",
+		desc: "一只实力强劲的神秘小猫娘(๑´ㅂ`๑)",
+		siteurl: "https://kanade-chan.top/",
+		tags: ["Full-stack"],
+	},
 ];
 
 // 获取所有友情链接数据
