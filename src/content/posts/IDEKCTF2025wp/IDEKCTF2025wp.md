@@ -1973,7 +1973,7 @@ Heard of constructor? 
 
 + 下面是`sub_401050`函数
 
-```C
+```c
 unsigned __int64 __fastcall sub_401050(__int64 a1, __int64 a2, __int64 a3, __int64 a4, int a5, int a6)
 {
   int v6; // ecx
@@ -2030,7 +2030,7 @@ unsigned __int64 __fastcall sub_401050(__int64 a1, __int64 a2, __int64 a3, __int
 
 + 下列代码是解密/生成一段字节序列的关键
 
-```C
+```c
 for ( i = 0LL; i != 42; ++i )
 {
     v8 = v6 ^ (unsigned __int8)::a3[i];
@@ -2044,7 +2044,7 @@ for ( i = 0LL; i != 42; ++i )
 + 这段循环对`a3`指向的42字节数据进行变换,结果存入全局数组`byte_405140`
 + 变换公式如下
 
-```C
+```c
 output[i] = ((i >> 1) ^ (v6 ^ input[i]) ^ 0x5A)
 ```
 

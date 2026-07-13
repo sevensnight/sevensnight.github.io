@@ -7,7 +7,6 @@ import swup from "@swup/astro";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
-import { umami } from "oddmisc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components";
 import rehypeKatex from "rehype-katex";
@@ -37,10 +36,6 @@ export default defineConfig({
 	output: "static",
 
 	integrations: [
-		umami({
-			shareUrl:
-				"https://cloud.umami.is/analytics/us/share/NHjdXrjmk6mBgCEJ",
-		}),
 		tailwind({
 			nesting: true,
 		}),
@@ -131,7 +126,8 @@ export default defineConfig({
 			remarkMermaid,
 		],
 		rehypePlugins: [
-			rehypeKatex,
+			// strict: "ignore" 静音公式里不可见空格/中文字符的警告，不影响渲染
+			[rehypeKatex, { strict: "ignore" }],
 			rehypeSlug,
 			rehypeWrapTable,
 			rehypeMermaid,

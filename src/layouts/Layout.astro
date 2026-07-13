@@ -221,7 +221,8 @@ if (siteConfig.font) {
 						// 获取统计数据
 						const statsResponse = await fetch(`${apiBase}/websites/${shareData.websiteId}/stats?${params.toString()}`, {
 							headers: {
-								'x-umami-share-token': shareData.token
+								'x-umami-share-token': shareData.token,
+								'x-umami-share-context': '1'
 							}
 						});
 						
